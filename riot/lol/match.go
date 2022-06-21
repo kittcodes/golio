@@ -2,6 +2,7 @@ package lol
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 
 	log "github.com/sirupsen/logrus"
@@ -59,6 +60,18 @@ func (m *MatchClient) Get(id string) (*Match, error) {
 		return nil, err
 	}
 	return match, nil
+}
+
+func (m *MatchClient) GetRaw(id string) (*http.Response, error) {
+	logger := m.logger().WithField("method", "GetRaw")
+	c := *m.c                                          // copy client
+	c.Region = api.Region(api.RegionToRoute[c.Region]) // Match v5 uses a route instead of a region
+	resp, err := c.Get(fmt.Sprintf(endpointGetMatch, id))
+	if err != nil {
+		logger.Debug(err)
+		return nil, err
+	}
+	return resp, nil
 }
 
 // List returns  a list of match ids by puuid
@@ -134,11 +147,25 @@ func (m *MatchClient) ListStream(puuid string, options ...*MatchListOptions) <-c
 func (m *MatchClient) GetTimeline(id string) (*MatchTimeline, error) {
 	logger := m.logger().WithField("method", "GetTimeline")
 	var timeline MatchTimeline
-	if err := m.c.GetInto(fmt.Sprintf(endpointGetMatchTimeline, id), &timeline); err != nil {
+	c := *m.c                                          // copy client
+	c.Region = api.Region(api.RegionToRoute[c.Region]) // Match v5 uses a route instead of a region
+	if err := c.GetInto(fmt.Sprintf(endpointGetMatchTimeline, id), &timeline); err != nil {
 		logger.Debug(err)
 		return nil, err
 	}
 	return &timeline, nil
+}
+
+func (m *MatchClient) GetTimelineRaw(id string) (*http.Response, error) {
+	logger := m.logger().WithField("method", "GetTimelineRaw")
+	c := *m.c                                          // copy client
+	c.Region = api.Region(api.RegionToRoute[c.Region]) // Match v5 uses a route instead of a region
+	resp, err := c.Get(fmt.Sprintf(endpointGetMatchTimeline, id))
+	if err != nil {
+		logger.Debug(err)
+		return nil, err
+	}
+	return resp, nil
 }
 
 func (m *MatchClient) logger() log.FieldLogger {

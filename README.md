@@ -1,6 +1,6 @@
-[![Documentation](https://godoc.org/github.com/KnutZuidema/golio?status.svg)](https://godoc.org/github.com/KnutZuidema/golio)
-![CI](https://github.com/KnutZuidema/golio/workflows/CI/badge.svg?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/KnutZuidema/golio)](https://goreportcard.com/report/github.com/KnutZuidema/golio)
+[![Documentation](https://godoc.org/github.com/kittcodes/golio?status.svg)](https://godoc.org/github.com/kittcodes/golio)
+![CI](https://github.com/kittcodes/golio/workflows/CI/badge.svg?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kittcodes/golio)](https://goreportcard.com/report/github.com/kittcodes/golio)
 [![codecov](https://codecov.io/gh/KnutZuidema/golio/branch/master/graph/badge.svg)](https://codecov.io/gh/KnutZuidema/golio)
 
 # Golio
@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/KnutZuidema/golio"
-    "github.com/KnutZuidema/golio/api"
+	"github.com/kittcodes/golio"
+    "github.com/kittcodes/golio/api"
 	log "github.com/sirupsen/logrus"
 )
 

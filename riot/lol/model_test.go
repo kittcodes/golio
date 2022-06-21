@@ -7,11 +7,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/KnutZuidema/golio/api"
-	"github.com/KnutZuidema/golio/datadragon"
-	"github.com/KnutZuidema/golio/internal"
-	"github.com/KnutZuidema/golio/internal/mock"
-	"github.com/KnutZuidema/golio/static"
+	"github.com/kittcodes/golio/api"
+	"github.com/kittcodes/golio/datadragon"
+	"github.com/kittcodes/golio/internal"
+	"github.com/kittcodes/golio/internal/mock"
+	"github.com/kittcodes/golio/static"
 )
 
 func TestLeagueList_GetRank(t *testing.T) {

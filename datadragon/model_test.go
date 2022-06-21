@@ -6,8 +6,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KnutZuidema/golio/api"
-	"github.com/KnutZuidema/golio/internal"
+	"github.com/kittcodes/golio/api"
+	"github.com/kittcodes/golio/internal"
 )
 
 func TestChampionData_GetExtended(t *testing.T) {

@@ -25,11 +25,11 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/KnutZuidema/golio/api"
-	"github.com/KnutZuidema/golio/datadragon"
-	"github.com/KnutZuidema/golio/internal"
-	"github.com/KnutZuidema/golio/riot"
-	"github.com/KnutZuidema/golio/static"
+	"github.com/kittcodes/golio/api"
+	"github.com/kittcodes/golio/datadragon"
+	"github.com/kittcodes/golio/internal"
+	"github.com/kittcodes/golio/riot"
+	"github.com/kittcodes/golio/static"
 )
 
 // Client is a client for both the Riot API and the Data Dragon service

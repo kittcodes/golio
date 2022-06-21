@@ -450,8 +450,20 @@ type Team struct {
 
 // MatchTimeline contains timeline frames for a match
 type MatchTimeline struct {
-	Frames   []*MatchFrame `json:"frames"`
-	Interval int           `json:"frameInterval"`
+	Info     MatchTimelineInfo `json:"info"`
+	Metadata MatchMetadata     `json:"metadata"`
+}
+
+type MatchTimelineInfo struct {
+	Frames       []*MatchFrame `json:"frames"`
+	Interval     int           `json:"frameInterval"`
+	GameID       int           `json:"gameId"`
+	Participants []Participant `json:"participants"`
+}
+
+type MatchTimelineParticipant struct {
+	ParticipantId int    `json:"participantId"`
+	PUUID         string `json:"puuid"`
 }
 
 // MatchFrame is a single frame in the timeline of a game
@@ -463,16 +475,61 @@ type MatchFrame struct {
 
 // ParticipantFrame contains information about a participant in a game at a single timestamp
 type ParticipantFrame struct {
-	TotalGold           int            `json:"totalGold"`
-	TeamScore           int            `json:"teamScore"`
-	ParticipantID       int            `json:"participantId"`
-	Level               int            `json:"level"`
-	CurrentGold         int            `json:"currentGold"`
-	MinionsKilled       int            `json:"minionsKilled"`
-	DominionScore       int            `json:"dominionScore"`
-	Position            *MatchPosition `json:"position"`
-	XP                  int            `json:"xp"`
-	JungleMinionsKilled int            `json:"jungleMinionsKilled"`
+	TotalGold                int                      `json:"totalGold"`
+	ParticipantID            int                      `json:"participantId"`
+	Level                    int                      `json:"level"`
+	CurrentGold              int                      `json:"currentGold"`
+	MinionsKilled            int                      `json:"minionsKilled"`
+	GoldPerSecond            int                      `json:"goldPerSecond"`
+	TimeEnemySpentControlled int                      `json:"timeEnemySpentControlled"`
+	DamageStats              ParticipantDamageStats   `json:"damageStats"`
+	ChampionStats            ParticipantChampionStats `json:"championStats"`
+	Position                 *MatchPosition           `json:"position"`
+	XP                       int                      `json:"xp"`
+	JungleMinionsKilled      int                      `json:"jungleMinionsKilled"`
+}
+
+type ParticipantDamageStats struct {
+	MagicDamageDone               int `json:"magicDamageDone"`
+	MagicDamageDoneToChampions    int `json:"magicDamageDoneToChampions"`
+	MagicDamageTaken              int `json:"magicDamageTaken"`
+	PhysicalDamageDone            int `json:"physicalDamageDone"`
+	PhysicalDamageDoneToChampions int `json:"physicalDamageDoneToChampions"`
+	PhysicalDamageTaken           int `json:"physicalDamageTaken"`
+	TotalDamageDone               int `json:"totalDamageDone"`
+	TotalDamageDoneToChampions    int `json:"totalDamageDoneToChampions"`
+	TotalDamageTaken              int `json:"totalDamageTaken"`
+	TrueDamageDone                int `json:"trueDamageDone"`
+	TrueDamageDoneToChampions     int `json:"trueDamageDoneToChampions"`
+	TrueDamageTaken               int `json:"trueDamageTaken"`
+}
+
+type ParticipantChampionStats struct {
+	AbilityHaste         int `json:"abilityHaste"`
+	AbilityPower         int `json:"abilityPower"`
+	Armor                int `json:"armor"`
+	ArmorPen             int `json:"armorPen"`
+	ArmorPenPercent      int `json:"armorPenPercent"`
+	AttackDamage         int `json:"attackDamage"`
+	AttackSpeed          int `json:"attackSpeed"`
+	BonusArmorPenPercent int `json:"bonusArmorPenPercent"`
+	BonusMagicPenPercent int `json:"bonusMagicPenPercent"`
+	CcReduction          int `json:"ccReduction"`
+	CooldownReduction    int `json:"cooldownReduction"`
+	Health               int `json:"health"`
+	HealthMax            int `json:"healthMax"`
+	HealthRegen          int `json:"healthRegen"`
+	Lifesteal            int `json:"lifesteal"`
+	MagicPen             int `json:"magicPen"`
+	MagicPenPercent      int `json:"magicPenPercent"`
+	MagicResist          int `json:"magicResist"`
+	MovementSpeed        int `json:"movementSpeed"`
+	Omnivamp             int `json:"omnivamp"`
+	PhysicalVamp         int `json:"physicalVamp"`
+	Power                int `json:"power"`
+	PowerMax             int `json:"powerMax"`
+	PowerRegen           int `json:"powerRegen"`
+	SpellVamp            int `json:"spellVamp"`
 }
 
 // MatchEventType is the type of an event

@@ -253,7 +253,7 @@ type ParticipantChallenges struct {
 	ElderDragonKillsWithOpposingSoul          int     `json:"elderDragonKillsWithOpposingSoul"`
 	ElderDragonMultikills                     int     `json:"elderDragonMultikills"`
 	EnemyChampionImmobilizations              int     `json:"enemyChampionImmobilizations"`
-	EnemyJungleMonsterKills                   int     `json:"enemyJungleMonsterKills"`
+	EnemyJungleMonsterKills                   float64 `json:"enemyJungleMonsterKills"`
 	EpicMonsterKillsNearEnemyJungler          int     `json:"epicMonsterKillsNearEnemyJungler"`
 	EpicMonsterKillsWithin30SecondsOfSpawn    int     `json:"epicMonsterKillsWithin30SecondsOfSpawn"`
 	EpicMonsterSteals                         int     `json:"epicMonsterSteals"`

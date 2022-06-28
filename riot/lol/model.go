@@ -247,6 +247,7 @@ type ParticipantChallenges struct {
 	DragonTakedowns                           int     `json:"dragonTakedowns"`
 	EarliestBaron                             float64 `json:"earliestBaron"`
 	EarliestDragonTakedown                    float64 `json:"earliestDragonTakedown"`
+	EarliestElderDragon                       float64 `json:"earliestElderDragon"`
 	EarlyLaningPhaseGoldExpAdvantage          float64 `json:"earlyLaningPhaseGoldExpAdvantage"`
 	EffectiveHealAndShielding                 float64 `json:"effectiveHealAndShielding"`
 	ElderDragonKillsWithOpposingSoul          int     `json:"elderDragonKillsWithOpposingSoul"`
@@ -257,14 +258,18 @@ type ParticipantChallenges struct {
 	EpicMonsterKillsWithin30SecondsOfSpawn    int     `json:"epicMonsterKillsWithin30SecondsOfSpawn"`
 	EpicMonsterSteals                         int     `json:"epicMonsterSteals"`
 	EpicMonsterStolenWithoutSmite             int     `json:"epicMonsterStolenWithoutSmite"`
+	FasterSupportQuestCompletion              int     `json:"fasterSupportQuestCompletion"`
 	FastestLegendary                          float64 `json:"fastestLegendary"`
+	FirstTurretKilledTime                     float64 `json:"firstTurretKilledTime"`
 	FlawlessAces                              int     `json:"flawlessAces"`
 	FullTeamTakedown                          int     `json:"fullTeamTakedown"`
 	GameLength                                float64 `json:"gameLength"`
+	GetTakedownsInAllLanesEarlyJungleAsLaner  int     `json:"getTakedownsInAllLanesEarlyJungleAsLaner"`
 	GoldPerMinute                             float64 `json:"goldPerMinute"`
 	HadAfkTeammate                            int     `json:"hadAfkTeammate"`
 	HadOpenNexus                              int     `json:"hadOpenNexus"`
 	HighestChampionDamage                     int     `json:"highestChampionDamage"`
+	HighestCrowdControlScore                  int     `json:"highestCrowdControlScore"`
 	HighestWardKills                          int     `json:"highestWardKills"`
 	ImmobilizeAndKillWithAlly                 int     `json:"immobilizeAndKillWithAlly"`
 	InitialBuffCount                          int     `json:"initialBuffCount"`
@@ -280,6 +285,7 @@ type ParticipantChallenges struct {
 	KillingSprees                             int     `json:"killingSprees"`
 	KillsNearEnemyTurret                      int     `json:"killsNearEnemyTurret"`
 	KillsOnLanersEarlyJungleAsJungler         int     `json:"killsOnLanersEarlyJungleAsJungler"`
+	KillsOnOtherLanesEarlyJungleAsLaner       int     `json:"killsOnOtherLanesEarlyJungleAsLaner"`
 	KillsOnRecentlyHealedByAramPack           int     `json:"killsOnRecentlyHealedByAramPack"`
 	KillsUnderOwnTurret                       int     `json:"killsUnderOwnTurret"`
 	KillsWithHelpFromEpicMonster              int     `json:"killsWithHelpFromEpicMonster"`
@@ -292,6 +298,7 @@ type ParticipantChallenges struct {
 	MaxCsAdvantageOnLaneOpponent              float64 `json:"maxCsAdvantageOnLaneOpponent"`
 	MaxKillDeficit                            int     `json:"maxKillDeficit"`
 	MaxLevelLeadLaneOpponent                  int     `json:"maxLevelLeadLaneOpponent"`
+	MejaisFullStackInTime                     float64 `json:"mejaisFullStackInTime"`
 	MoreEnemyJungleThanOpponent               float64 `json:"moreEnemyJungleThanOpponent"`
 	MultiKillOneSpell                         int     `json:"multiKillOneSpell"`
 	MultiTurretRiftHeraldCount                int     `json:"multiTurretRiftHeraldCount"`
@@ -332,6 +339,7 @@ type ParticipantChallenges struct {
 	TeamDamagePercentage                      float64 `json:"teamDamagePercentage"`
 	TeamElderDragonKills                      int     `json:"teamElderDragonKills"`
 	TeamRiftHeraldKills                       int     `json:"teamRiftHeraldKills"`
+	TeleportTakedowns                         int   `json:"teleportTakedowns"`
 	ThirdInhibitorDestroyedTime               float64 `json:"thirdInhibitorDestroyedTime"`
 	ThreeWardsOneSweeperCount                 int     `json:"threeWardsOneSweeperCount"`
 	TookLargeDamageSurvived                   int     `json:"tookLargeDamageSurvived"`
